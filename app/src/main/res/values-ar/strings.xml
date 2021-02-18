@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Arabic -->
+
+    <string name="app_name">Talaa</string>
+    <string name="navigation_drawer_open" translatable="false">افتح درج التنقل</string>
+    <string name="navigation_drawer_close" translatable="false">أغلق درج التنقل</string>
+    <string name="nav_header_title" translatable="false">بيئة تطوير أندرويد</string>
+    <string name="nav_header_desc" translatable="false">رأس التنقل</string>
+
+    <string name="menu_home" translatable="false">الصفحة الرئيسية</string>
+    <string name="menu_restaurant_categories" translatable="false">فئات المطاعم</string>
+    <string name="menu_places_categories" translatable="false">فئات الأماكن</string>
+    <string name="menu_setting" translatable="false">ضبط</string>
+    <string name="menu_translator" translatable="false">مترجم</string>
+    <string name="menu_exit" translatable="false">خروج</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">مرحبا جزء فارغ</string>
+    <string name="places" translatable="false">أماكن</string>
+    <string name="all_places" translatable="false">جميع الأماكن</string>
+    <string name="places_category_list" translatable="false">قائمة فئة الأماكن</string>
+    <string name="restaurant" translatable="false">مطعم</string>
+    <string name="all_restaurants" translatable="false">جميع المطاعم</string>
+    <string name="what_are_you_looking_for" translatable="false">عن ماذا تبحث؟</string>
+    <string name="show_all" translatable="false">عرض الكل</string>
+    <string name="title" translatable="false">عنوان</string>
+    <string name="prize" translatable="false">1000 دولار</string>
+    <string name="custom_action_bar_text" translatable="false">نص شريط الإجراءات المخصص</string>
+    <string name="details" translatable="false">تفاصيل</string>
+    <string name="location" translatable="false">موقعك</string>
+    <string name="mall" translatable="false">مجمع تجاري</string>
+    <string name="beaches" translatable="false">مجمع تجاري</string>
+    <string name="culture" translatable="false">حضاره</string>
+    <string name="family_and_kids" translatable="false">الأسرة والأطفال</string>
+    <string name="spa_and_wellness" translatable="false">سبا والعافية</string>
+    <string name="activities" translatable="false">أنشطة</string>
+    <string name="water_activities" translatable="false">انشطة مائية</string>
+    <string name="discription" translatable="false">وصف</string>
+    <string name="discription_detail" translatable="false">وصف تجريبي
+        abcaskdjlaskdjlaksjdoasjdlanfousadasofjsodaiijfaksfoaij
+    اسيفجالفسج</string>
+    <string name="social_platforms" translatable="false">المنصات الاجتماعية</string>
+    <string name="nature_and_wild_life" translatable="false">الطبيعة والحياة البرية</string>
+    <string name="phone_number" translatable="false">+923000830674</string>
+    <string name="time" translatable="false">8:00 ص - 9:00 م</string>
+</resources>

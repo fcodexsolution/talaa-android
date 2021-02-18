@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Talaa</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+
+    <string name="menu_home" translatable="false">Home</string>
+    <string name="open">Navigation Open</string>
+    <string name="close">Navigation Close</string>
+    <string name="menu_restaurant_categories" translatable="false">Restaurant Categories</string>
+    <string name="menu_places_categories" translatable="false">Places Categories</string>
+    <string name="menu_setting" translatable="false">Setting</string>
+    <string name="menu_translator" translatable="false">Translator</string>
+    <string name="menu_exit" translatable="false">Exit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <!-- Map API Key -->
+    <string name="google_maps_key">AIzaSyCKUDuoOG8Sk0YlyOkHHIqvi28sCnkrW0Y</string>
+    <string name="places">Places</string>
+    <string name="all_places">All Places</string>
+    <string name="places_category_list">Places Category List</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="all_restaurants">All Restaurants</string>
+    <string name="what_are_you_looking_for">What are you looking for?</string>
+    <string name="show_all">Show All</string>
+    <string name="title">Title</string>
+    <string name="prize">1000 $</string>
+    <string name="custom_action_bar_text">Custom Action Bar Text</string>
+    <string name="details">Details</string>
+    <string name="location">Location</string>
+    <string name="mall">Mall</string>
+    <string name="beaches">Beaches</string>
+    <string name="culture">Culture</string>
+    <string name="family_and_kids">Family And Kids</string>
+    <string name="spa_and_wellness">Spa And Wellness</string>
+    <string name="activities">Activities</string>
+    <string name="water_activities">Water Activities</string>
+    <string name="discription">Discription</string>
+    <string name="discription_detail">Demo discription
+        abcaskdjlaskdjlaksjdoasjdlanfousadasofjsodaiijfaksfoaij
+    asifjalfsj</string>
+    <string name="social_platforms">Social Platforms</string>
+    <string name="nature_and_wild_life">Nature And Wild Life</string>
+    <string name="phone_number">+923000830674</string>
+    <string name="time">8:00 am - 9:00 pm</string>
+    <string name="faq">FAQ</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="enter_message">Enter Message</string>
+    <string name="send">Send</string>
+    <string name="faq_question">FAQ Question?</string>
+    <string name="faq_answer">FAQ Answer</string>
+    <string name="suggested_places">Suggested Places</string>
+    <string name="last_visit_location">Last Visit Location</string>
+    <string name="city">City</string>
+    <string name="cities">Cities</string>
+    <string name="total_cities">Total Cities</string>
+    <string name="city_places_and_restaurant">City Places And Restaurant</string>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_navigation_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_restaurant_categories"
+            android:checkable="false"
+            android:icon="@drawable/ic_navigation_restaurant_categories"
+            android:title="@string/menu_restaurant_categories" />
+        <item
+            android:id="@+id/nav_places_categories"
+            android:checkable="false"
+            android:icon="@drawable/ic_navigation_places_categories"
+            android:title="@string/menu_places_categories" />
+        <item
+            android:id="@+id/nav_suggested_places"
+            android:checkable="false"
+            android:icon="@drawable/ic_suggested_location"
+            android:title="@string/suggested_places" />
+        <item
+            android:id="@+id/nav_last_visit_location"
+            android:checkable="false"
+            android:icon="@drawable/ic_last_visit_location"
+            android:title="@string/last_visit_location" />
+        <item
+            android:id="@+id/nav_setting"
+            android:checkable="false"
+            android:icon="@drawable/ic_navigation_setting"
+            android:title="@string/menu_setting" />
+        <item
+            android:id="@+id/nav_exit"
+            android:checkable="false"
+            android:icon="@drawable/ic_navigation_exit"
+            android:title="@string/menu_exit" />
+
+    </group>
+
+</menu>
