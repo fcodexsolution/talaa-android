@@ -153,7 +153,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="10dp"
-                    android:text="@string/discription"
+                    android:text="@string/description"
                     android:textSize="20sp" />
 
                 <TextView
@@ -163,7 +163,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="15dp"
-                    android:text="@string/discription_detail"
+                    android:text="@string/description_detail"
                     android:textSize="17sp" />
 
             </LinearLayout>

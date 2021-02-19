@@ -37,8 +37,8 @@
     <string name="spa_and_wellness">Spa And Wellness</string>
     <string name="activities">Activities</string>
     <string name="water_activities">Water Activities</string>
-    <string name="discription">Discription</string>
-    <string name="discription_detail">Demo discription
+    <string name="description">Description</string>
+    <string name="description_detail">Demo discription
         abcaskdjlaskdjlaksjdoasjdlanfousadasofjsodaiijfaksfoaij
     asifjalfsj</string>
     <string name="social_platforms">Social Platforms</string>
@@ -60,4 +60,12 @@
     <string name="cities">Cities</string>
     <string name="total_cities">Total Cities</string>
     <string name="city_places_and_restaurant">City Places And Restaurant</string>
+    <string name="city_place_name">City Place Name</string>
+    <string name="total_places">Total Places</string>
+    <string name="closeing_time">Closeing</string>
+    <string name="opening_time">Opening</string>
+    <string name="open_time_am">23:40</string>
+    <string name="close_time_pm">23:40</string>
+    <string name="data_not_found">Data Not Found</string>
+    <string name="server_error">Server Error</string>
 </resources>

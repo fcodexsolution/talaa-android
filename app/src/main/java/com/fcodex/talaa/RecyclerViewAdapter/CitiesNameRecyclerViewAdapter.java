@@ -18,7 +18,7 @@ import com.fcodex.talaa.R;
 
 import java.util.List;
 
-public class CitiesNameRecyclerViewAdapter extends RecyclerView.Adapter<VipsTips> {
+public class CitiesNameRecyclerViewAdapter extends RecyclerView.Adapter<CityName> {
 
     private final Context context;
     private final List<Modal> citiesModalListAdapter;
@@ -30,22 +30,23 @@ public class CitiesNameRecyclerViewAdapter extends RecyclerView.Adapter<VipsTips
 
     @NonNull
     @Override
-    public VipsTips onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CityName onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_city_name_view, parent, false);
 
-        return new VipsTips(view);
+        return new CityName(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VipsTips holder, int position) {
+    public void onBindViewHolder(@NonNull CityName holder, int position) {
 
-        holder.cityNameTextView.setText(citiesModalListAdapter.get(position).getCitiesName());
+        holder.CityNameTextView.setText(citiesModalListAdapter.get(position).getCitiesName());
+
         holder.itemView.setOnClickListener(v -> {
-            Log.d("cityNameId_", String.valueOf(citiesModalListAdapter.get(position).getCitiesId()));
+            Log.d("city_id", String.valueOf(citiesModalListAdapter.get(position).getCitiesId()));
 
             Intent intent = new Intent(context, CityPlacesAndRestaurantActivity.class);
-            intent.putExtra("cityNameId_", citiesModalListAdapter.get(position).getCitiesId());
+            intent.putExtra("city_id", citiesModalListAdapter.get(position).getCitiesId());
             context.startActivity(intent);
         });
 
@@ -57,14 +58,14 @@ public class CitiesNameRecyclerViewAdapter extends RecyclerView.Adapter<VipsTips
     }
 }
 
-class VipsTips extends RecyclerView.ViewHolder {
+class CityName extends RecyclerView.ViewHolder {
 
-    public TextView cityNameTextView;
+    public TextView CityNameTextView;
 
-    public VipsTips(@NonNull View itemView) {
+    public CityName(@NonNull View itemView) {
         super(itemView);
 
-        cityNameTextView = itemView.findViewById(R.id.cityNameTextView);
+        CityNameTextView = itemView.findViewById(R.id.cityNameTextView);
 
     }
 }

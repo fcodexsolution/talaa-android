@@ -33,6 +33,7 @@ import java.util.Map;
 public class HomeFragment extends Fragment {
 
     private TextView totalCitiesTextView;
+    private TextView dataNotFoundTextView;
     private ShimmerRecyclerView citiesShimmerRecyclerView;
     private ImageView noDataFound;
     private final List<Modal> citiesModal = new ArrayList<>();
@@ -72,7 +73,7 @@ public class HomeFragment extends Fragment {
                         Log.d("specific_response", response);
                         String cityNameString = jsonObjectFetchData.getString("city_name");
                         int cityIdString = jsonObjectFetchData.getInt("city_id");
-                        Log.d("city_name_", cityNameString);
+                        Log.d("city_id", cityNameString);
 
                         Modal cityNameModal = new Modal();
                         cityNameModal.setCitiesName(cityNameString);
@@ -81,17 +82,22 @@ public class HomeFragment extends Fragment {
                         citiesModal.add(cityNameModal);
                     }
                     setUpRecyclerView(citiesModal);
-                } else {
-                    noDataFound.setVisibility(View.VISIBLE);
+
+                } else if (status.equals("fail")) {
                     citiesShimmerRecyclerView.setVisibility(View.GONE);
+                    noDataFound.setVisibility(View.VISIBLE);
+                    noDataFound.setImageResource(R.drawable.ic_data_not_found);
+                    dataNotFoundTextView.setVisibility(View.VISIBLE);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }, error -> {
             Log.d("error__", String.valueOf(error));
-            noDataFound.setVisibility(View.VISIBLE);
             citiesShimmerRecyclerView.setVisibility(View.GONE);
+            noDataFound.setVisibility(View.VISIBLE);
+            dataNotFoundTextView.setVisibility(View.VISIBLE);
+            dataNotFoundTextView.setText(R.string.server_error);
         }) {
             @Override
             protected Map<String, String> getParams() {
@@ -118,6 +124,7 @@ public class HomeFragment extends Fragment {
         totalCitiesTextView = view.findViewById(R.id.totalCitiesTextView);
         citiesShimmerRecyclerView = view.findViewById(R.id.citiesShimmerRecyclerView);
         noDataFound = view.findViewById(R.id.noDataFound);
+        dataNotFoundTextView = view.findViewById(R.id.dataNotFoundTextView);
     }
 
 }
