@@ -1,10 +1,6 @@
 package com.fcodex.talaa.City;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,16 +9,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.fcodex.talaa.API.API;
 import com.fcodex.talaa.Modal.Modal;
 import com.fcodex.talaa.R;
-import com.fcodex.talaa.RecyclerViewAdapter.CitiesNameRecyclerViewAdapter;
 import com.fcodex.talaa.RecyclerViewAdapter.CityPlaceRecyclerViewAdapter;
 import com.fcodex.talaa.Singleton.Singleton;
 
@@ -81,13 +77,15 @@ public class CityPlaceFragment extends Fragment {
     private void jsonResponse() {
         // Fetching Status
         // Checking specific response
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, API.PLACES_API, response -> {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, API.CITIES_PLACES_API, response -> {
             try {
                 Log.d("responseCityPlace_", response);
                 JSONObject jsonObject = new JSONObject(response);
                 Log.d("jsonObject", String.valueOf(jsonObject));
                 // Fetching Status
                 String status = jsonObject.getString("status");
+                String total = jsonObject.getString("total");
+                totalCityPlaceTextView.setText(total);
                 Log.d("statusFalse_", String.valueOf(status));
                 if (status.equals("success")) {
                     Log.d("statusTrue_", String.valueOf(status));
@@ -99,6 +97,7 @@ public class CityPlaceFragment extends Fragment {
 
                         // Checking specific response
                         Log.d("specific_response", response);
+                        int cityPlaceIdString = Integer.parseInt(jsonObjectFetchData.getString("placeId"));
                         String cityPlaceNameString = jsonObjectFetchData.getString("placeName");
                         String cityPlaceImageString = jsonObjectFetchData.getString("placeImage");
                         String cityPlaceLocationTileString = jsonObjectFetchData.getString("locationTitle");
@@ -108,6 +107,7 @@ public class CityPlaceFragment extends Fragment {
                         Log.d("prize_", cityPlacePrizeString);
 
                         Modal cityPlaceAPiModal = new Modal();
+                        cityPlaceAPiModal.setCityPlaceId(cityPlaceIdString);
                         cityPlaceAPiModal.setCityPlaceName(cityPlaceNameString);
                         cityPlaceAPiModal.setCityPlaceImage(cityPlaceImageString);
                         cityPlaceAPiModal.setCityPlaceLocationTitle(cityPlaceLocationTileString);

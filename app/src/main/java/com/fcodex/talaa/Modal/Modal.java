@@ -6,9 +6,11 @@ public class Modal {
 
     String citiesName;
     int citiesId;
-    String cityPlaceImage;
-    String cityPlaceLocationTitle;
+    int cityPlaceId;
+    int totalCities;
     String cityPlaceName;
+    String cityPlaceImage;
+    String cityPlaceNumber;
     String cityPlacePrize;
     String cityPlaceDescription;
     String openingTime;
@@ -17,8 +19,11 @@ public class Modal {
     int longitude;
     String facebookURL;
     String instagramURL;
-
-
+    String websiteURL;
+    String cityPlaceLocationTitle;
+    String privacyPolicy;
+    String faqQuestion;
+    String faqAnswer;
 
     // City Name Getter Setter
     public String getCitiesName() {
@@ -34,8 +39,24 @@ public class Modal {
         return citiesId;
     }
 
+    public int getTotalCities() {
+        return totalCities;
+    }
+
+    public void setTotalCities(int totalCities) {
+        this.totalCities = totalCities;
+    }
+
     public void setCitiesId(int citiesId) {
         this.citiesId = citiesId;
+    }
+
+    public int getCityPlaceId() {
+        return cityPlaceId;
+    }
+
+    public void setCityPlaceId(int cityPlaceId) {
+        this.cityPlaceId = cityPlaceId;
     }
 
     public String getCityPlaceImage() {
@@ -124,6 +145,46 @@ public class Modal {
 
     public void setInstagramURL(String instagramURL) {
         this.instagramURL = instagramURL;
+    }
+
+    public String getCityPlaceNumber() {
+        return cityPlaceNumber;
+    }
+
+    public void setCityPlaceNumber(String cityPlaceNumber) {
+        this.cityPlaceNumber = cityPlaceNumber;
+    }
+
+    public String getWebsiteURL() {
+        return websiteURL;
+    }
+
+    public void setWebsiteURL(String websiteURL) {
+        this.websiteURL = websiteURL;
+    }
+
+    public String getPrivacyPolicy() {
+        return privacyPolicy;
+    }
+
+    public void setPrivacyPolicy(String privacyPolicy) {
+        this.privacyPolicy = privacyPolicy;
+    }
+
+    public String getFaqQuestion() {
+        return faqQuestion;
+    }
+
+    public void setFaqQuestion(String faqQuestion) {
+        this.faqQuestion = faqQuestion;
+    }
+
+    public String getFaqAnswer() {
+        return faqAnswer;
+    }
+
+    public void setFaqAnswer(String faqAnswer) {
+        this.faqAnswer = faqAnswer;
     }
 
 

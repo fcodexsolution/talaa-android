@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class CityRestaurantFragment extends Fragment {
 
@@ -63,7 +64,7 @@ public class CityRestaurantFragment extends Fragment {
 
     private void getData() {
         try {
-            city_id = getActivity().getIntent().getExtras().getInt("city_id", 0);
+            city_id = Objects.requireNonNull(getActivity()).getIntent().getExtras().getInt("city_id", 0);
             Log.d("city_id_city", String.valueOf(city_id));
 
             if (city_id == 0)
@@ -77,13 +78,15 @@ public class CityRestaurantFragment extends Fragment {
     private void jsonResponse() {
         // Fetching Status
         // Checking specific response
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, API.PLACES_API, response -> {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, API.CITIES_RESTAURANTS_API, response -> {
             try {
                 Log.d("responseCityPlace_", response);
                 JSONObject jsonObject = new JSONObject(response);
                 Log.d("jsonObject", String.valueOf(jsonObject));
                 // Fetching Status
                 String status = jsonObject.getString("status");
+                String total = jsonObject.getString("total");
+                totalCityRestaurantTextView.setText(total);
                 Log.d("statusFalse_", String.valueOf(status));
                 if (status.equals("success")) {
                     Log.d("statusTrue_", String.valueOf(status));
@@ -95,11 +98,11 @@ public class CityRestaurantFragment extends Fragment {
 
                         // Checking specific response
                         Log.d("specific_response", response);
-                        String cityPlaceNameString = jsonObjectFetchData.getString("placeName");
-                        String cityPlaceImageString = jsonObjectFetchData.getString("placeImage");
+                        String cityPlaceNameString = jsonObjectFetchData.getString("resturantName");
+                        String cityPlaceImageString = jsonObjectFetchData.getString("resturantImage");
                         String cityPlaceLocationTileString = jsonObjectFetchData.getString("locationTitle");
-                        String cityPlaceOpenTimeString = jsonObjectFetchData.getString("placeOpening");
-                        String cityPlaceCloseTimeString = jsonObjectFetchData.getString("placeClosing");
+                        String cityPlaceOpenTimeString = jsonObjectFetchData.getString("resturantOpening");
+                        String cityPlaceCloseTimeString = jsonObjectFetchData.getString("resturantClosing");
                         String cityPlacePrizeString = jsonObjectFetchData.getString("price");
                         Log.d("prize_", cityPlacePrizeString);
 

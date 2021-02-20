@@ -9,29 +9,41 @@
 
     <include layout="@layout/custom_action_bar"/>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/reviewCard"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+            android:id="@+id/privacyPolicyShimmerRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:shimmer_demo_angle="20"
+            app:shimmer_demo_child_count="10"
+            app:shimmer_demo_grid_child_count="2"
+            app:shimmer_demo_layout="@layout/layout_demo_grid"
+            app:shimmer_demo_layout_manager_type="linear_vertical" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center|left"
-                android:layout_margin="10dp"
-                android:text="@string/privacy_policy"
-                android:textSize="17sp" />
+        <ImageView
+            android:id="@+id/privacyPolicyNoDataFoundImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_server_error"
+            android:visibility="gone" />
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/privacyPolicyDataNotFoundTextView"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/data_not_found"
+            android:textSize="30sp" />
 
-    </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 
 </LinearLayout>

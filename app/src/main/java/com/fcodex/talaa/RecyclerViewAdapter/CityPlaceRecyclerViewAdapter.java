@@ -1,6 +1,7 @@
 package com.fcodex.talaa.RecyclerViewAdapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.fcodex.talaa.City.CityPlaceRestaurantFullViewActivity;
+import com.fcodex.talaa.City.CityPlacesAndRestaurantActivity;
 import com.fcodex.talaa.Modal.Modal;
 import com.fcodex.talaa.R;
+import com.google.android.material.transition.Hold;
 
 import java.util.List;
 
@@ -48,9 +52,11 @@ public class CityPlaceRecyclerViewAdapter extends RecyclerView.Adapter<CityPlace
         holder.cityPlaceOpenTimePmTextView.setText(cityPlaceModalList.get(position).getCloseingTime());
         holder.cityPlacePrizeTextView.setText(cityPlaceModalList.get(position).getCityPlacePrize());
 
-        holder.itemView.setOnClickListener(v ->
-                Toast.makeText(context, "id" + cityPlaceModalList.get(position), Toast.LENGTH_SHORT).show());
-
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, CityPlaceRestaurantFullViewActivity.class);
+            intent.putExtra("city_place_id", cityPlaceModalList.get(position).getCityPlaceId());
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -58,6 +64,7 @@ public class CityPlaceRecyclerViewAdapter extends RecyclerView.Adapter<CityPlace
         return cityPlaceModalList.size();
     }
 }
+
 class CityPlace extends RecyclerView.ViewHolder {
 
     ImageView cityPlaceImageView;

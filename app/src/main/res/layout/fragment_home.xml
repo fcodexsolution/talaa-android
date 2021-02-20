@@ -69,7 +69,7 @@
                 app:shimmer_demo_layout_manager_type="linear_vertical" />
 
             <ImageView
-                android:id="@+id/noDataFound"
+                android:id="@+id/noDataFoundImageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"

@@ -35,7 +35,7 @@ public class HomeFragment extends Fragment {
     private TextView totalCitiesTextView;
     private TextView dataNotFoundTextView;
     private ShimmerRecyclerView citiesShimmerRecyclerView;
-    private ImageView noDataFound;
+    private ImageView noDataFoundImageView;
     private final List<Modal> citiesModal = new ArrayList<>();
     private View view;
 
@@ -61,6 +61,8 @@ public class HomeFragment extends Fragment {
                 Log.d("jsonObject", String.valueOf(jsonObject));
                 // Fetching Status
                 String status = jsonObject.getString("status");
+                String total = jsonObject.getString("total");
+                totalCitiesTextView.setText(total);
                 Log.d("statusFalse_", String.valueOf(status));
                 if (status.equals("success")) {
                     Log.d("statusTrue_", String.valueOf(status));
@@ -85,8 +87,8 @@ public class HomeFragment extends Fragment {
 
                 } else if (status.equals("fail")) {
                     citiesShimmerRecyclerView.setVisibility(View.GONE);
-                    noDataFound.setVisibility(View.VISIBLE);
-                    noDataFound.setImageResource(R.drawable.ic_data_not_found);
+                    noDataFoundImageView.setVisibility(View.VISIBLE);
+                    noDataFoundImageView.setImageResource(R.drawable.ic_data_not_found);
                     dataNotFoundTextView.setVisibility(View.VISIBLE);
                 }
             } catch (JSONException e) {
@@ -95,7 +97,7 @@ public class HomeFragment extends Fragment {
         }, error -> {
             Log.d("error__", String.valueOf(error));
             citiesShimmerRecyclerView.setVisibility(View.GONE);
-            noDataFound.setVisibility(View.VISIBLE);
+            noDataFoundImageView.setVisibility(View.VISIBLE);
             dataNotFoundTextView.setVisibility(View.VISIBLE);
             dataNotFoundTextView.setText(R.string.server_error);
         }) {
@@ -123,7 +125,7 @@ public class HomeFragment extends Fragment {
     private void id() {
         totalCitiesTextView = view.findViewById(R.id.totalCitiesTextView);
         citiesShimmerRecyclerView = view.findViewById(R.id.citiesShimmerRecyclerView);
-        noDataFound = view.findViewById(R.id.noDataFound);
+        noDataFoundImageView = view.findViewById(R.id.noDataFoundImageView);
         dataNotFoundTextView = view.findViewById(R.id.dataNotFoundTextView);
     }
 
