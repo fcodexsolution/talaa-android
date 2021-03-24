@@ -17,7 +17,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:paddingTop="8dp"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/icon_talaa"
         app:civ_border_color="@color/white"
         app:civ_border_width="2dp" />
 

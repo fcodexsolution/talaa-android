@@ -10,30 +10,31 @@
     <include layout="@layout/custom_action_bar" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/translaterCard"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="80dp"
         android:layout_marginRight="20dp"
         app:cardCornerRadius="10dp"
-        app:cardElevation="10dp" >
+        app:cardElevation="10dp">
 
         <LinearLayout
-            android:background="@color/navigationColor"
             android:id="@+id/translatorLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/navigationColor"
             android:orientation="horizontal"
             android:weightSum="10">
 
             <TextView
-                android:textColor="@color/white"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="8"
                 android:gravity="center|left"
                 android:paddingStart="30dp"
                 android:text="@string/menu_translator"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 tools:ignore="RtlSymmetry" />
 
@@ -56,24 +57,24 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         app:cardCornerRadius="10dp"
-        app:cardElevation="10dp" >
+        app:cardElevation="10dp">
 
         <LinearLayout
-            android:background="@color/navigationColor"
             android:id="@+id/contactUsLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/navigationColor"
             android:orientation="horizontal"
             android:weightSum="10">
 
             <TextView
-                android:textColor="@color/white"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="8"
                 android:gravity="center|left"
                 android:paddingStart="30dp"
                 android:text="@string/contact_us"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 tools:ignore="RtlSymmetry" />
 
@@ -95,25 +96,25 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         app:cardCornerRadius="10dp"
-        app:cardElevation="10dp" >
+        app:cardElevation="10dp">
 
         <LinearLayout
-            android:background="@color/navigationColor"
             android:id="@+id/faqLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/navigationColor"
             android:orientation="horizontal"
             android:weightSum="10">
 
             <TextView
                 android:id="@+id/faqImageView"
-                android:textColor="@color/white"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="8"
                 android:gravity="center|left"
                 android:paddingStart="30dp"
                 android:text="@string/faq"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 tools:ignore="RtlSymmetry" />
 
@@ -135,24 +136,24 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         app:cardCornerRadius="10dp"
-        app:cardElevation="10dp" >
+        app:cardElevation="10dp">
 
         <LinearLayout
-            android:background="@color/navigationColor"
             android:id="@+id/privacyPolicyLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/navigationColor"
             android:orientation="horizontal"
             android:weightSum="10">
 
             <TextView
-                android:textColor="@color/white"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="8"
                 android:gravity="center|left"
                 android:paddingStart="30dp"
                 android:text="@string/privacy_policy"
+                android:textColor="@color/white"
                 android:textSize="15sp"
                 tools:ignore="RtlSymmetry" />
 

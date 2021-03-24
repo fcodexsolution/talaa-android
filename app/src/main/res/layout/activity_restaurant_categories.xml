@@ -5,24 +5,82 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".NavigationActivities.RestaurantCategoriesActivity">
+    tools:context=".PlacesAndRestaurantCategory.RestaurantCategoriesActivity">
 
     <include layout="@layout/custom_action_bar" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/restaurantCategoryDineInTabLayout"
-        android:background="@color/navigationColor"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:tabIndicatorColor="@color/pink"
-        app:tabSelectedTextColor="#FFFFFF"
-        app:tabTextColor="#E1E0E0" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/restaurantCategoryTakeAwayViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center|left"
+                android:text="@string/menu_restaurant_categories"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/placesCategoriesTotalTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center|right"
+                android:text="@string/total_restaurant_categories"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                android:id="@+id/restaurantCategoriesShimmerRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:shimmer_demo_angle="20"
+                app:shimmer_demo_child_count="10"
+                app:shimmer_demo_grid_child_count="2"
+                app:shimmer_demo_layout="@layout/layout_demo_grid"
+                app:shimmer_demo_layout_manager_type="linear_vertical" />
+
+            <ImageView
+                android:id="@+id/restaurantCategoriesNoDataFoundImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_server_error"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/restaurantCategoriesDataNotFoundTextView"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="@string/data_not_found"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

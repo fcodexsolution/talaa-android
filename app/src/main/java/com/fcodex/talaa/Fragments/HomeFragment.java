@@ -18,7 +18,7 @@ import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.fcodex.talaa.API.API;
 import com.fcodex.talaa.Modal.Modal;
 import com.fcodex.talaa.R;
-import com.fcodex.talaa.RecyclerViewAdapter.CitiesNameRecyclerViewAdapter;
+import com.fcodex.talaa.RecyclerViewAdapter.CategoriesRecyclerViewAdapter;
 import com.fcodex.talaa.Singleton.Singleton;
 
 import org.json.JSONArray;
@@ -53,29 +53,22 @@ public class HomeFragment extends Fragment {
 
     private void jsonResponse() {
         // Fetching Status
-        // Checking specific response
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, API.CITIES_API, response -> {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, API.CITIES_API, response -> {
             try {
-                Log.d("response_", response);
                 JSONObject jsonObject = new JSONObject(response);
-                Log.d("jsonObject", String.valueOf(jsonObject));
                 // Fetching Status
                 String status = jsonObject.getString("status");
+                Log.d("status_city", status);
                 String total = jsonObject.getString("total");
                 totalCitiesTextView.setText(total);
-                Log.d("statusFalse_", String.valueOf(status));
                 if (status.equals("success")) {
-                    Log.d("statusTrue_", String.valueOf(status));
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObjectFetchData;
                         jsonObjectFetchData = jsonArray.getJSONObject(i);
 
-                        // Checking specific response
-                        Log.d("specific_response", response);
                         String cityNameString = jsonObjectFetchData.getString("city_name");
                         int cityIdString = jsonObjectFetchData.getInt("city_id");
-                        Log.d("city_id", cityNameString);
 
                         Modal cityNameModal = new Modal();
                         cityNameModal.setCitiesName(cityNameString);
@@ -83,19 +76,20 @@ public class HomeFragment extends Fragment {
 
                         citiesModal.add(cityNameModal);
                     }
-                    setUpRecyclerView(citiesModal);
+                    setUpRecyclerView(citiesModal, 1);
 
                 } else if (status.equals("fail")) {
                     citiesShimmerRecyclerView.setVisibility(View.GONE);
                     noDataFoundImageView.setVisibility(View.VISIBLE);
                     noDataFoundImageView.setImageResource(R.drawable.ic_data_not_found);
                     dataNotFoundTextView.setVisibility(View.VISIBLE);
+                    dataNotFoundTextView.setText(R.string.empty_data);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }, error -> {
-            Log.d("error__", String.valueOf(error));
+            Log.d("error_home", String.valueOf(error));
             citiesShimmerRecyclerView.setVisibility(View.GONE);
             noDataFoundImageView.setVisibility(View.VISIBLE);
             dataNotFoundTextView.setVisibility(View.VISIBLE);
@@ -116,10 +110,10 @@ public class HomeFragment extends Fragment {
 
     }
 
-    public void setUpRecyclerView(List<Modal> citiesModal) {
-        CitiesNameRecyclerViewAdapter citiesRecyclerViewAdapter = new CitiesNameRecyclerViewAdapter(getActivity(), citiesModal);
+    public void setUpRecyclerView(List<Modal> citiesModal, int j) {
+        CategoriesRecyclerViewAdapter categoriesRecyclerViewAdapter = new CategoriesRecyclerViewAdapter(getActivity(), citiesModal, j);
         citiesShimmerRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        citiesShimmerRecyclerView.setAdapter(citiesRecyclerViewAdapter);
+        citiesShimmerRecyclerView.setAdapter(categoriesRecyclerViewAdapter);
     }
 
     private void id() {

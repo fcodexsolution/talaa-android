@@ -1,18 +1,26 @@
 package com.fcodex.talaa.NavigationActivities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
+import com.fcodex.talaa.Modal.Modal;
 import com.fcodex.talaa.R;
+import com.fcodex.talaa.RecyclerViewAdapter.LastVisitLocationLocationRecyclerViewAdapter;
+import com.fcodex.talaa.Singleton.LastVisitLocationSingleton;
+
+import java.util.List;
 
 public class LastVisitLocationActivity extends AppCompatActivity {
 
     private ImageView customActionBarBackImage;
     private TextView customActionBarText;
+    private ShimmerRecyclerView lastVisitLocationShimmerRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +34,18 @@ public class LastVisitLocationActivity extends AppCompatActivity {
 
     }
 
+    public void setUpRecyclerView(List<Modal> lastVisitLocationModal) {
+        LastVisitLocationLocationRecyclerViewAdapter lastVisitLocationLocationRecyclerViewAdapter = new
+                            LastVisitLocationLocationRecyclerViewAdapter(this, lastVisitLocationModal);
+        lastVisitLocationShimmerRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        lastVisitLocationShimmerRecyclerView.setAdapter(lastVisitLocationLocationRecyclerViewAdapter);
+    }
+
     private void id() {
         customActionBarBackImage = findViewById(R.id.customActionBarBackImage);
         customActionBarText = findViewById(R.id.customActionBarText);
+        lastVisitLocationShimmerRecyclerView = findViewById(R.id.lastVisitLocationShimmerRecyclerView);
+        setUpRecyclerView(LastVisitLocationSingleton.instance().getmRecentClicks());
     }
 
     private void onClick() {

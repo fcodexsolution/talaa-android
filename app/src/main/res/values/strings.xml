@@ -68,4 +68,27 @@
     <string name="close_time_pm">23:40</string>
     <string name="data_not_found">Data Not Found</string>
     <string name="server_error">Server Error</string>
+    <string name="show_more">More</string>
+    <string name="total_dine_in_restaurant">Total Dine In Restaurant</string>
+    <string name="dine_in_restaurant">Dine In Restaurant</string>
+    <string name="total_places_categories">Total Places Categories</string>
+    <string name="total_restaurant_categories">Total Restaurant Categories</string>
+    <string name="total_items">Total Items</string>
+    <string name="empty_data">Fail List is empty</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="login">Login</string>
+    <string name="or">Or</string>
+    <string name="create_account">Create Account</string>
+    <string name="category_items">Category Items</string>
+    <string name="log_out">Log out</string>
+    <string name="restaurant_category_list">Restaurant Category List</string>
+    <string name="error_to_get_list">Error to get list </string>
+    <string name="enter_place_or_restaurant_name">Enter Place or Restaurant Name</string>
+    <string name="enter_city_name">Enter City Name</string>
+    <string name="enter_place_or_restaurant_category">Enter Place Or Restaurant Category</string>
+    <string name="submit">Submit</string>
+    <string name="code">Code</string>
+    <string name="verify">Verify</string>
+    <string name="check_your_email_for_verification_code">Check your email for verification code</string>
+    <string name="enter_last_name">Enter Last Name</string>
 </resources>

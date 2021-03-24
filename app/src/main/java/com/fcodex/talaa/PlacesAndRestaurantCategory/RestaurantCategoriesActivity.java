@@ -1,4 +1,4 @@
-package com.fcodex.talaa.NavigationActivities;
+package com.fcodex.talaa.PlacesAndRestaurantCategory;
 
 import android.content.Intent;
 import android.os.Bundle;

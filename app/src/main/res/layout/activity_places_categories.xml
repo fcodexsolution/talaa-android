@@ -1,476 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NavigationActivities.PlacesCategoriesActivity">
+    tools:context=".PlacesAndRestaurantCategory.PlacesCategoriesActivity">
+
+    <include layout="@layout/custom_action_bar" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
-        <include layout="@layout/custom_action_bar" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/mallCardView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
-            android:background="@color/navigationColor"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/cardBackgroundColor2"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:weightSum="10">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center|left"
+                android:text="@string/cities"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:background="@color/cardBackgroundColor2"
-                    android:padding="10dp">
+            <TextView
+                android:id="@+id/placesCategoriesTotalTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center|right"
+                android:text="@string/total_places_categories"
+                android:textSize="15sp" />
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/cardBackgroundColor2"
-                        app:cardCornerRadius="10dp">
+        </LinearLayout>
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/ic_mall"
-                            tools:ignore="ContentDescription" />
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="6"
-                    android:gravity="center|left"
-                    android:text="@string/mall"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:ignore="NestedWeights" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
-            android:background="@color/navigationColor"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+                android:id="@+id/placesCategoriesShimmerRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/cardBackgroundColor2"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:weightSum="10">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:shimmer_demo_angle="20"
+                app:shimmer_demo_child_count="10"
+                app:shimmer_demo_grid_child_count="2"
+                app:shimmer_demo_layout="@layout/layout_demo_grid"
+                app:shimmer_demo_layout_manager_type="linear_vertical" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:background="@color/cardBackgroundColor2"
-                    android:padding="10dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/cardBackgroundColor2"
-                        app:cardCornerRadius="10dp">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/ic_beach"
-                            tools:ignore="ContentDescription" />
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="6"
-                    android:gravity="center|left"
-                    android:text="@string/beaches"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:ignore="NestedWeights" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
-            android:background="@color/navigationColor"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
+            <ImageView
+                android:id="@+id/placesCategoriesNoDataFoundImageView"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/cardBackgroundColor2"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:weightSum="10">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_server_error"
+                android:visibility="gone" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:background="@color/cardBackgroundColor2"
-                    android:padding="10dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/cardBackgroundColor2"
-                        app:cardCornerRadius="10dp">
-
-                        <ImageView
-                            android:layout_width="60.232dp"
-                            android:layout_height="50.232dp"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/culture"
-                            tools:ignore="ContentDescription" />
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="6"
-                    android:gravity="center|left"
-                    android:text="@string/culture"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:ignore="NestedWeights" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
-            android:background="@color/navigationColor"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/placesCategoriesDataNotFoundTextView"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/cardBackgroundColor2"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:weightSum="10">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="@string/data_not_found"
+                android:textSize="30sp" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:background="@color/cardBackgroundColor2"
-                    android:padding="10dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/cardBackgroundColor2"
-                        app:cardCornerRadius="10dp">
-
-                        <ImageView
-                            android:layout_width="60.232dp"
-                            android:layout_height="50.232dp"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/family_and_kids"
-                            tools:ignore="ContentDescription" />
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="6"
-                    android:gravity="center|left"
-                    android:text="@string/family_and_kids"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:ignore="NestedWeights" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
-            android:background="@color/navigationColor"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/cardBackgroundColor2"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:weightSum="10">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:background="@color/cardBackgroundColor2"
-                    android:padding="10dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/cardBackgroundColor2"
-                        app:cardCornerRadius="10dp">
-
-                        <ImageView
-                            android:layout_width="60.232dp"
-                            android:layout_height="50.232dp"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/nature"
-                            tools:ignore="ContentDescription" />
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="6"
-                    android:gravity="center|left"
-                    android:text="@string/nature_and_wild_life"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:ignore="NestedWeights" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
-            android:background="@color/navigationColor"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/cardBackgroundColor2"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:weightSum="10">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:background="@color/cardBackgroundColor2"
-                    android:padding="10dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/cardBackgroundColor2"
-                        app:cardCornerRadius="10dp">
-
-                        <ImageView
-                            android:layout_width="60.232dp"
-                            android:layout_height="50.232dp"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/spa"
-                            tools:ignore="ContentDescription" />
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="6"
-                    android:gravity="center|left"
-                    android:text="@string/spa_and_wellness"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:ignore="NestedWeights" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
-            android:background="@color/navigationColor"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/cardBackgroundColor2"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:weightSum="10">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:background="@color/cardBackgroundColor2"
-                    android:padding="10dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/cardBackgroundColor2"
-                        app:cardCornerRadius="10dp">
-
-                        <ImageView
-                            android:layout_width="60.232dp"
-                            android:layout_height="50.232dp"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/activities"
-                            tools:ignore="ContentDescription" />
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="6"
-                    android:gravity="center|left"
-                    android:text="@string/activities"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:ignore="NestedWeights" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_margin="10dp"
-            android:background="@color/navigationColor"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="@color/cardBackgroundColor2"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:weightSum="10">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:background="@color/cardBackgroundColor2"
-                    android:padding="10dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/cardBackgroundColor2"
-                        app:cardCornerRadius="10dp">
-
-                        <ImageView
-                            android:layout_width="60.232dp"
-                            android:layout_height="50.232dp"
-                            android:layout_gravity="center"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/water"
-                            tools:ignore="ContentDescription" />
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="6"
-                    android:gravity="center|left"
-                    android:text="@string/water_activities"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    tools:ignore="NestedWeights" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
     </LinearLayout>
 
-</ScrollView>
+</LinearLayout>

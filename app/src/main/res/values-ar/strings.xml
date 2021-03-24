@@ -36,12 +36,47 @@
     <string name="spa_and_wellness" translatable="false">سبا والعافية</string>
     <string name="activities" translatable="false">أنشطة</string>
     <string name="water_activities" translatable="false">انشطة مائية</string>
-    <string name="discription" translatable="false">وصف</string>
-    <string name="discription_detail" translatable="false">وصف تجريبي
+    <string name="description" translatable="false">وصف</string>
+    <string name="description_detail" translatable="false">وصف تجريبي
         abcaskdjlaskdjlaksjdoasjdlanfousadasofjsodaiijfaksfoaij
     اسيفجالفسج</string>
     <string name="social_platforms" translatable="false">المنصات الاجتماعية</string>
     <string name="nature_and_wild_life" translatable="false">الطبيعة والحياة البرية</string>
     <string name="phone_number" translatable="false">+923000830674</string>
     <string name="time" translatable="false">8:00 ص - 9:00 م</string>
+    <string name="faq" translatable="false">التعليمات</string>
+    <string name="contact_us" translatable="false">اتصل بنا</string>
+    <string name="privacy_policy" translatable="false">سياسة خاصة</string>
+    <string name="enter_name" translatable="false">أدخل الاسم</string>
+    <string name="enter_email" translatable="false">أدخل البريد الإلكتروني</string>
+    <string name="enter_message" translatable="false">أدخل رسالة</string>
+    <string name="send" translatable="false">إرسال</string>
+    <string name="faq_question" translatable="false">أسئلة وأجوبة سؤال؟</string>
+    <string name="faq_answer" translatable="false">إجابة التعليمات</string>
+    <string name="suggested_places" translatable="false">الأماكن المقترحة</string>
+    <string name="last_visit_location" translatable="false">آخر زيارة للموقع</string>
+    <string name="city" translatable="false">مدينة</string>
+    <string name="cities" translatable="false">مدن</string>
+    <string name="total_cities" translatable="false">إجمالي المدن</string>
+    <string name="city_places_and_restaurant" translatable="false">أماكن ومطعم المدينة</string>
+    <string name="city_place_name" translatable="false">اسم مكان المدينة</string>
+    <string name="total_places" translatable="false">مجموع الأماكن</string>
+    <string name="closeing_time" translatable="false">إغلاق</string>
+    <string name="opening_time" translatable="false">افتتاح</string>
+    <string name="open_time_am" translatable="false">23:40</string>
+    <string name="close_time_pm" translatable="false">23:40</string>
+    <string name="data_not_found" translatable="false">لم يتم العثور على بيانات</string>
+    <string name="server_error" translatable="false">خطأ في الخادم</string>
+    <string name="show_more" translatable="false">أكثر</string>
+    <string name="total_dine_in_restaurant" translatable="false">إجمالي تناول الطعام في المطعم</string>
+    <string name="dine_in_restaurant" translatable="false">تناول الطعام في المطعم</string>
+    <string name="total_places_categories" translatable="false">فئات الأماكن الإجمالية</string>
+    <string name="total_restaurant_categories" translatable="false">إجمالي فئات المطاعم</string>
+    <string name="total_items" translatable="false">إجمالي العناصر</string>
+    <string name="empty_data" translatable="false">قائمة الفشل فارغة</string>
+    <string name="enter_password" translatable="false">أدخل كلمة المرور</string>
+    <string name="login" translatable="false">تسجيل الدخول</string>
+    <string name="or" translatable="false">أو</string>
+    <string name="create_account" translatable="false">إنشاء حساب</string>
+    <string name="category_items" translatable="false">عناصر الفئة</string>
 </resources>

@@ -1,8 +1,5 @@
 package com.fcodex.talaa.SettingActivities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,16 +7,17 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.toolbox.StringRequest;
 import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.fcodex.talaa.API.API;
 import com.fcodex.talaa.Modal.Modal;
-import com.fcodex.talaa.NavigationActivities.MainActivity;
 import com.fcodex.talaa.NavigationActivities.SettingActivity;
 import com.fcodex.talaa.R;
-import com.fcodex.talaa.RecyclerViewAdapter.CitiesNameRecyclerViewAdapter;
 import com.fcodex.talaa.RecyclerViewAdapter.PrivacyPolicyRecyclerViewAdapter;
 import com.fcodex.talaa.Singleton.Singleton;
 
@@ -59,23 +57,16 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
         // Checking specific response
         StringRequest stringRequest = new StringRequest(Request.Method.POST, API.PRIVACY_POLICY_API, response -> {
             try {
-                Log.d("response_", response);
                 JSONObject jsonObject = new JSONObject(response);
-                Log.d("jsonObject", String.valueOf(jsonObject));
                 // Fetching Status
                 String status = jsonObject.getString("status");
-                Log.d("statusFalse_", String.valueOf(status));
                 if (status.equals("success")) {
-                    Log.d("statusTrue_", String.valueOf(status));
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObjectFetchData;
                         jsonObjectFetchData = jsonArray.getJSONObject(i);
 
-                        // Checking specific response
-                        Log.d("specific_response", response);
                         String privacyPolicyString = jsonObjectFetchData.getString("description");
-                        Log.d("privacyPolicyString_", privacyPolicyString);
 
                         Modal privacyPolicyModalFetch = new Modal();
                         privacyPolicyModalFetch.setPrivacyPolicy(privacyPolicyString);
@@ -89,6 +80,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
                     privacyPolicyNoDataFoundImageView.setVisibility(View.VISIBLE);
                     privacyPolicyNoDataFoundImageView.setImageResource(R.drawable.ic_data_not_found);
                     privacyPolicyDataNotFoundTextView.setVisibility(View.VISIBLE);
+                    privacyPolicyDataNotFoundTextView.setText(R.string.empty_data);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

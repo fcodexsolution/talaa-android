@@ -35,9 +35,8 @@
                         android:id="@+id/cityPlaceImageView"
                         android:layout_width="match_parent"
                         android:layout_height="108dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/loading"
-                        tools:ignore="ContentDescription" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/loading"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -122,14 +121,13 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/cityPlacePrizeTextView"
+                android:id="@+id/cityPlaceShowMoreTextView"
                 android:layout_width="2dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1.7"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="@string/prize"
-                android:textSize="15sp" />
+                android:text="@string/show_more" />
 
         </LinearLayout>
 

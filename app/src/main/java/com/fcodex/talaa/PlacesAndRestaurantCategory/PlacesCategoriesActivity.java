@@ -1,6 +1,7 @@
-package com.fcodex.talaa.NavigationActivities;
+package com.fcodex.talaa.PlacesAndRestaurantCategory;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,12 +49,16 @@ public class PlacesCategoriesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_places_categories);
 
         id();
-        //onClick();
+        sharedPreferences();
         jsonResponse();
         getData();
 
         customActionBarText.setText(R.string.menu_places_categories);
         customActionBarBackImage.setVisibility(View.INVISIBLE);
+
+    }
+
+    private void sharedPreferences() {
 
     }
 
@@ -155,18 +160,4 @@ public class PlacesCategoriesActivity extends AppCompatActivity {
         placesCategoriesShimmerRecyclerView.setAdapter(categoriesRecyclerViewAdapter);
     }
 
-    /*private void onClick() {
-        customActionBarBackImage.setOnClickListener(v -> {
-            Intent intent = new Intent(this, CityPlacesAndRestaurantActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-        });
-    }
-
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this, CityPlacesAndRestaurantActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }*/
 }
